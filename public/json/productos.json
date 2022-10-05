@@ -1,0 +1,103 @@
+[
+    {
+        "id": 1,
+        "idCategoria":1,
+        "nombre": "Jogger Camuflado",
+        "marca": "Nike",
+        "talle": "M",
+        "precio": 8000,
+        "stock": 30,
+        "img": "jogger-camuflado.jpg"
+    },
+    {
+        "id": 2,
+        "idCategoria":1,
+        "nombre": "Jogger Verde",
+        "marca": "Felix",
+        "talle": "M",
+        "precio": 8000,
+        "stock": 20,
+        "img": "jogger-verde.jpg"
+    },
+    {
+        "id": 3,
+        "idCategoria":1,
+        "nombre": "Jogger Khaki",
+        "marca": "Benz",
+        "talle": "M",
+        "precio": 9000,
+        "stock": 15,
+        "img": "jogger-khaki.jpg"
+    },
+    {
+        "id": 4,
+        "idCategoria":2,
+        "nombre": "Hoodie Negro",
+        "marca": "Luxo",
+        "talle": "L",
+        "precio": 10000,
+        "stock": 30,
+        "img": "hoodie-negro.jpg"
+    },
+    {
+        "id": 5,
+        "idCategoria":2,
+        "nombre": "Hoodie Beige",
+        "marca": "Conjuro",
+        "Talle": "L",
+        "precio": 11000,
+        "stock": 7,
+        "img": "hoodie-beige.jpg"
+    },
+    {
+        "id": 6,
+        "idCategoria":2,
+        "nombre": "Hoodie Chocolate",
+        "marca": "Conjuro",
+        "Talle": "XL",
+        "precio": 11000,
+        "stock": 20,
+        "img": "hoodie-chocolate.jpg"
+    },
+    {
+        "id": 7,
+        "idCategoria":3,
+        "nombre": "Remera Negra",
+        "marca": "Sunwaves",
+        "Talle": "S",
+        "precio": 6000,
+        "stock": 10,
+        "img": "remera-negra.jpg"
+    },
+    {
+        "id": 8,
+        "idCategoria":3,
+        "nombre": "Remera Blanca",
+        "marca": "Sunwaves",
+        "Talle": "M",
+        "precio": 6000,
+        "stock": 30,
+        "img": "remera-blanca.jpg"
+    },
+    {
+        "id": 9,
+        "idCategoria":3,
+        "nombre": "Remera Gris Cemento",
+        "marca": "Luxo",
+        "Talle": "L",
+        "precio": 7000,
+        "stock": 21,
+        "img": "remera-gris-cemento.jpg"
+    },
+    {
+        "id": 10,
+        "idCategoria":4,
+        "nombre": "Gorro Violeta",
+        "marca": "Pop",
+        "Talle": "Unico",
+        "precio": 4000,
+        "stock": 25,
+        "img": "gorro-violeta.jpg"
+    }
+    
+]

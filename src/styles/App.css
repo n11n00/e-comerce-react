@@ -1,0 +1,35 @@
+body{
+  
+}
+.divGeneral {
+    background-color: aqua;
+    color: gray;
+}
+.cardProducto {
+    width: 18rem;
+    margin: 4px;
+  }
+  
+  .dropdown-toggle {
+    position: absolute;
+    top: 8px;
+    width: 43px;
+    height: 40px;
+  }
+
+  .btn :hover{
+    transform: scale(1.1);
+    transition-property: all;
+    transition-duration: 0.5s;
+  }
+
+  .btn :hover{
+    transform: scale(1.15);
+    transition-property: all;
+    transition-duration: 0.3s;
+  }
+
+.nav-itemm{
+  margin: 0px 0px 0px 0px;
+}
+
