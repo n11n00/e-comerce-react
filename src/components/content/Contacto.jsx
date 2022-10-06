@@ -12,8 +12,8 @@ const Contacto = () => {
 
     return (
 
-        <>
-            <form onSubmit={consultarForm()}> 
+        <> <h1>Contacto</h1> 
+            {/* <form onSubmit={consultarForm()}> 
                 <div className="mb-3">
                 <label htmlFor="nombre" className="form-label">Email </label>
                 <input type="text" className="form-control" name="nombre" aria-describedby="emailHelp" />
@@ -28,7 +28,7 @@ const Contacto = () => {
                 <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
-            </form>
+            </form> */}
         </>
     );
 }
