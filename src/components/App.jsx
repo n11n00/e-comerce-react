@@ -13,18 +13,20 @@ import Carrito from './content/Carrito';
 const App = () => {
   return (
     <>
-      <BrowserRouter>
-        <Navbar/>
-        <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/producto/:id" element={<Producto/>} />
-          <Route path="/categoria/:id" element={<Categoria/>} />
-          <Route path="/about" element={<About/>} />
-          <Route path="/contacto" element={<Contacto/>} />
-          <Route path="/carrito" element={<Carrito/>} />
-        </Routes>
-        <Footer/>
-      </BrowserRouter>
+      {/* <DarkModeContext.Provider> */}
+        <BrowserRouter>
+          <Navbar/>
+          <Routes>
+            <Route path="/" element={<Home/>} />
+            <Route path="/producto/:id" element={<Producto/>} />
+            <Route path="/categoria/:id" element={<Categoria/>} />
+            <Route path="/about" element={<About/>} />
+            <Route path="/contacto" element={<Contacto/>} />
+            <Route path="/carrito" element={<Carrito/>} />
+          </Routes>
+          <Footer/>
+        </BrowserRouter>
+      {/* </DarkModeContext.Provider> */}
     </>
 );
 }
