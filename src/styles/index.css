@@ -1,0 +1,11 @@
+
+
+.cardcontainer {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.navbar {
+    padding: 0;
+}
