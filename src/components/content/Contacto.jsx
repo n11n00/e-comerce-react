@@ -1,9 +1,13 @@
 import React from 'react';
 
 const Contacto = () => {
+    const datosFormulario = React.useRef()
+
     const consultarForm = (e) => {
         e.preventDefault()
-
+        console.log(datosFormulario)
+        const datForm = new FormData(datosFormulario.current) 
+        console.log(Object.fromEntries(datForm))
 
 
     }
@@ -11,24 +15,25 @@ const Contacto = () => {
 
 
     return (
-
-        <> <h1>Contacto</h1> 
-            {/* <form onSubmit={consultarForm()}> 
-                <div className="mb-3">
-                <label htmlFor="nombre" className="form-label">Email </label>
-                <input type="text" className="form-control" name="nombre" aria-describedby="emailHelp" />
-                <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
-                </div>
-                <div className="mb-3">
-                <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                <input type="password" className="form-control" id="exampleInputPassword1" />
-                </div>
-                <div className="mb-3 form-check">
-                <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
-                </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
-            </form> */}
+       
+        <> 
+            <div className="container">
+                <form on onSubmit={() => consultarForm()} ref={datosFormulario}>
+                    <div className="mb-3">
+                    <label htmlFor="nombre" className="form-label">Nombre</label>
+                    <input type="text" className="form-control" name="nombre" />
+                    </div>
+                    <div className="mb-3">
+                    <label htmlFor="email" className="form-label">Email</label>
+                    <input type="email" className="form-control" name="email" />
+                    
+                    </div>
+                    <div className="mb-3 form-check">
+                    <textarea name="consulta" rows={10} cols={50} defaultValue={"Escriba su consulta aqui"} />
+                    </div>
+                    <button type="submit" className="btn btn-primary">Enviar Consulta</button>
+                </form>
+            </div>
         </>
     );
 }

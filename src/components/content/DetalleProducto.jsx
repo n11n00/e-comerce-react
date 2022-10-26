@@ -11,15 +11,16 @@ const DetalleProducto = ({producto}) => {
     if(indice != -1) {
       carrito[indice].cantidad = cant
     } else {
+      const prodCarrito = {id: prod.id, cantidad: cant}
       carrito.push(prodCarrito)
     }
   }
   const cantProducto = (operacion) => {
     if(operacion =="+") {
-      if(cantidad<producto.stock) {
+      if(cantidad < producto.stock) {
         setCantidad(cantidad + 1)
       } 
-      }else{
+        }else{
         if(cantidad > 1) {
           setCantidad(cantidad - 1)
       }

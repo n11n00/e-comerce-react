@@ -1,1 +1,0 @@
-Hola, mi nombre es Nino Martinez. Mi app es un E-comerce de ropa, aplique algunos estiilos con boostwatch y algunas animaciones a los botones.Este es el mismo codigo que uso mientras voy siguiendo las clases, asi que hay algunas cosas adelantadas como lo que venimos viendo del formulario, lo cual tengo que terminar.

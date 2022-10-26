@@ -1,11 +1,11 @@
 import React, {useState, useEffect, useContext} from 'react';
 import { consultarBDD } from '../../utilities/funcionesUtiles';
-// import { DarkModeContext } from 'react-router/dist/lib/context';
+// import { DarkModeContext } from '../../context/darkModeContext';
 import {Link} from 'react-router-dom'
 const Home = () => {
     const [productos, setProductos] = useState([]);
 
-    // const {darkMode, toggleDarkMode} = useContext(DarkModeContext)
+    // const {darkMode, toggleDarkMode} = useContext(DarkModeContext);
     useEffect(() => {
         consultarBDD('./json/productos.json').then(productos => {
             const cardProducto = productos.map(producto => 
@@ -27,8 +27,8 @@ const Home = () => {
 
 
     return (
-        <div className="row">
-            {/* <button onClick={() => toggleDarkMode()}>Dark Mode</button> */}
+        <div /*className={darkMode ? 'darkMode row': 'row'}*/>
+          {/* <button onClick={() => toggleDarkMode()}>Dark Mode</button>  */}
             {productos}     
         </div>      
         
