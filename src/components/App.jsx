@@ -1,4 +1,3 @@
-import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import '../styles/App.css'
 import { DarkModeProvider } from '../context/darkModeContext';
@@ -14,7 +13,7 @@ import Carrito from './content/Carrito';
 const App = () => {
   return (
     <>
-      {/* <DarkModeProvider> */}
+      <DarkModeProvider props= {"hola"}>
         <BrowserRouter>
           <Navbar/>
           <Routes>
@@ -28,7 +27,7 @@ const App = () => {
           </Routes>
           <Footer/>
         </BrowserRouter>
-      {/* </DarkModeProvider> */}
+      </DarkModeProvider>
     </>
 );
 }

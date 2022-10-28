@@ -8,7 +8,7 @@ const Contacto = () => {
         console.log(datosFormulario)
         const datForm = new FormData(datosFormulario.current) 
         console.log(Object.fromEntries(datForm))
-
+        e.target.reset()
 
     }
 

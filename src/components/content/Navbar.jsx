@@ -4,7 +4,7 @@ import Form from '../layouts/Form';
 import Dropdown from '../layouts/Dropdown';
 import Secciones from '../layouts/Secciones';
 import CarWidget from '../layouts/CarWidget';
-const Navbar = () => {
+const Navbar = ({contador}) => {
     const listDropdown = ["Joggers", "Hoodies", "Remeras", "Gorras"]
     return (
         <>

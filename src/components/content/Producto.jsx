@@ -1,26 +1,27 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import DetalleProducto from './DetalleProducto'
 import { useParams } from 'react-router-dom';
-import { consultarBDD } from '../../utilities/funcionesUtiles';
+import { getProductos } from '../../utilities/firebase';
+import { DarkModeContext } from '../../context/darkModeContext';
 const Producto = () => {
     const [producto, setProducto] = useState([]);
     const {id} = useParams()
+    const {darkMode} = useContext(DarkModeContext);
     useEffect(() => {
-       consultarBDD('../json/productos.json').then(productos => {
-        const producto1 = productos.find(productoArray => productoArray.id == id)
-        setProducto(producto1)
+        getProductos(id).then(prod => {
+        setProducto(prod)
        })
    
     }, [])
 
-    return (
-        
-            <div className="card mb-3" style={{maxWidth: '540px'}}>
-                <DetalleProducto producto={producto}/>
-            </div>
-
+    if (producto.length != 0) {
+        return (
+                <div className={darkMode ? 'darkMode card mb-3' : 'card mb-3'} style={{maxWidth: '540px'}}>
+                    <DetalleProducto producto={producto}/>
        
-    );
-}
-
-export default Producto;
+                </div>
+        )
+    }}
+    
+    export default Producto;
+    

@@ -1,23 +1,23 @@
 import React, {useState, useEffect, useContext} from 'react';
-import { consultarBDD } from '../../utilities/funcionesUtiles';
-// import { DarkModeContext } from '../../context/darkModeContext';
+import { getProductos } from '../../utilities/firebase.js';
+import { DarkModeContext } from '../../context/darkModeContext';
 import {Link} from 'react-router-dom'
 const Home = () => {
     const [productos, setProductos] = useState([]);
 
-    // const {darkMode, toggleDarkMode} = useContext(DarkModeContext);
+    const {darkMode} = useContext(DarkModeContext);
     useEffect(() => {
-        consultarBDD('./json/productos.json').then(productos => {
+        getProductos().then(productos => {
             const cardProducto = productos.map(producto => 
-                <div className="card cardProducto" key={producto.id}>
-                    <img src={"./img/" + producto.img} className="card-img-top" alt={producto.nombre} />
+                <div className="card cardProducto" key={producto[0]}>
+                    <img src={producto[1].img} className="card-img-top" alt={producto.nombre} />
                         <div className="card-body">
-                            <h5 className="card-title">{producto.nombre}</h5>
-                            <p className="card-text"> Marca: {producto.marca}</p>
-                            <p className="card-text">Talle: {producto.talle}</p>
-                            <p className="card-text">Precio: {producto.precio}</p>
-                            <p className="card-text">Stock: {producto.stock}</p>
-                            <button className='btn btn-success'><Link className='nav-link' to={`/producto/${producto.id}`}>Ver Producto</Link></button>
+                            <h5 className="card-title">{producto[1].nombre}</h5>
+                            <p className="card-text"> Marca: {producto[1].marca}</p>
+                            <p className="card-text">Talle: {producto[1].talle}</p>
+                            <p className="card-text">Precio: {producto[1].precio}</p>
+                            <p className="card-text">Stock: {producto[1].stock}</p>
+                            <button className='btn btn-success'><Link className='nav-link' to={`/producto/${producto[0]}`}>Ver Producto</Link></button>
                     </div>
                 </div>)
             
@@ -27,8 +27,7 @@ const Home = () => {
 
 
     return (
-        <div /*className={darkMode ? 'darkMode row': 'row'}*/>
-          {/* <button onClick={() => toggleDarkMode()}>Dark Mode</button>  */}
+        <div className={darkMode ? 'darkMode row' : 'row'}>
             {productos}     
         </div>      
         

@@ -1,23 +1,14 @@
 
-import React, {useState} from 'react';
-
+import React, {useState,useContext} from 'react';
+import { CarritoContext } from '../../context/carritoContext.jsx';
 const DetalleProducto = ({producto}) => {
   const [cantidad, setCantidad] = useState(1);
-  const carrito=[]
+  const {carrito, agregarProducto, quitarProducto} = useContext(CarritoContext)
 
-  const agregarAlCarrito = (prod, cant) => {
-    let indice = carrito.findIndex(producto => producto.id == prod.id)
-    const prodCarrito = {id: prod.id, cantidad: cant}
-    if(indice != -1) {
-      carrito[indice].cantidad = cant
-    } else {
-      const prodCarrito = {id: prod.id, cantidad: cant}
-      carrito.push(prodCarrito)
-    }
-  }
+  
   const cantProducto = (operacion) => {
     if(operacion =="+") {
-      if(cantidad < producto.stock) {
+      if(cantidad < producto[1].stock) {
         setCantidad(cantidad + 1)
       } 
         }else{
@@ -31,21 +22,21 @@ const DetalleProducto = ({producto}) => {
          
   <div className="row g-0">
     <div className="col-md-4">
-      <img src={`../img/${producto.img}`} className="img-fluid rounded-start" alt="..." />
+      <img src={producto[1].img} className="img-fluid rounded-start" alt="..." />
     </div>
     <div className="col-md-8">
       <div className="card-body">
-        <h5 className="card-title">{producto.nombre}</h5>
-        <p className="card-text">{producto.marca}</p>
-        <p className="card-text">{producto.talle}</p>
-        <p className="card-text">{producto.precio}</p>
-        <p className="card-text">{producto.stock}</p>
+        <h5 className="card-title">{producto[1].nombre}</h5>
+        <p className="card-text">{producto[1].marca}</p>
+        <p className="card-text">{producto[1].talle}</p>
+        <p className="card-text">{producto[1].precio}</p>
+        <p className="card-text">{producto[1].stock}</p>
         <p className="card-text">{cantidad}</p>
 
         <button className='btn btn-light' onClick={() => cantProducto("+")}>+</button>
         <button className='btn btn-light' onClick={() => cantProducto("-")}>-</button>
 
-        <button className='btn btn-success' onClick={()=> agregarAlCarrito(producto, cantidad)}>Agregar al carrito</button>
+        <button className='btn btn-success' onClick={()=> agregarProducto(producto, cantidad)}>Agregar al carrito</button>
         </div>
         </div>
       </div>

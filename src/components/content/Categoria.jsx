@@ -1,10 +1,12 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useContext} from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { consultarBDD } from '../../utilities/funcionesUtiles';
+import { DarkModeContext } from '../../context/darkModeContext';
 const Categoria = () => {
 
     const [productos, setProductos] = useState([]);
     const {id} = useParams()
+    const {darkMode} = useContext(DarkModeContext);
     useEffect(() => {
         consultarBDD('../json/productos.json').then(productos => {
             const productosCategoria = productos.filter(producto => producto.idCategoria === parseInt(id) )
@@ -26,7 +28,7 @@ const Categoria = () => {
         })
     }, [id]);
     return (
-        <div className="row">
+        <div className={darkMode ? 'darkMode row' : 'row'}>
             {productos}
         </div>
             
