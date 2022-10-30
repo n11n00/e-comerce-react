@@ -1,16 +1,17 @@
 import React, {useState, useEffect, useContext} from 'react';
 import DetalleProducto from './DetalleProducto'
 import { useParams } from 'react-router-dom';
-import { getProductos } from '../../utilities/firebase';
+import { getProducto } from '../../utilities/firebase.js';
 import { DarkModeContext } from '../../context/darkModeContext';
 const Producto = () => {
     const [producto, setProducto] = useState([]);
     const {id} = useParams()
     const {darkMode} = useContext(DarkModeContext);
     useEffect(() => {
-        getProductos(id).then(prod => {
-        setProducto(prod)
-       })
+        getProducto(id).then(prod =>  {
+            setProducto(prod)
+        
+    })
    
     }, [])
 

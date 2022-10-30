@@ -44,7 +44,7 @@
         "idCategoria":2,
         "nombre": "Hoodie Beige",
         "marca": "Conjuro",
-        "Talle": "L",
+        "talle": "L",
         "precio": 11000,
         "stock": 7,
         "img": "https://firebasestorage.googleapis.com/v0/b/react-34755-2022-b9d9f.appspot.com/o/Imagenes%2Fhoodie-beige.jpg?alt=media&token=7706907f-558b-4172-a536-3b302f81c367"
@@ -54,7 +54,7 @@
         "idCategoria":2,
         "nombre": "Hoodie Chocolate",
         "marca": "Conjuro",
-        "Talle": "XL",
+        "talle": "XL",
         "precio": 11000,
         "stock": 20,
         "img": "https://firebasestorage.googleapis.com/v0/b/react-34755-2022-b9d9f.appspot.com/o/Imagenes%2Fhoodie-chocolate.jpg?alt=media&token=00139a0e-0446-4cbf-9ce1-13787bc46d30"
@@ -64,7 +64,7 @@
         "idCategoria":3,
         "nombre": "Remera Negra",
         "marca": "Sunwaves",
-        "Talle": "S",
+        "talle": "S",
         "precio": 6000,
         "stock": 10,
         "img": "https://firebasestorage.googleapis.com/v0/b/react-34755-2022-b9d9f.appspot.com/o/Imagenes%2Fremera-negra.jpg?alt=media&token=1883a5fa-8922-4468-9c0d-ed97912c556b"
@@ -74,7 +74,7 @@
         "idCategoria":3,
         "nombre": "Remera Blanca",
         "marca": "Sunwaves",
-        "Talle": "M",
+        "talle": "M",
         "precio": 6000,
         "stock": 30,
         "img": "https://firebasestorage.googleapis.com/v0/b/react-34755-2022-b9d9f.appspot.com/o/Imagenes%2Fremera-blanca.jpg?alt=media&token=c824d605-c47f-441b-845a-0dacbd3b8372"
@@ -84,7 +84,7 @@
         "idCategoria":3,
         "nombre": "Remera Gris Cemento",
         "marca": "Luxo",
-        "Talle": "L",
+        "talle": "L",
         "precio": 7000,
         "stock": 21,
         "img": "https://firebasestorage.googleapis.com/v0/b/react-34755-2022-b9d9f.appspot.com/o/Imagenes%2Fremera-gris-cemento.jpg?alt=media&token=ffad0972-990c-4aa5-8c52-b82d0c67468a"
@@ -94,7 +94,7 @@
         "idCategoria":4,
         "nombre": "Gorro Violeta",
         "marca": "Pop",
-        "Talle": "Unico",
+        "talle": "Unico",
         "precio": 4000,
         "stock": 25,
         "img": "https://firebasestorage.googleapis.com/v0/b/react-34755-2022-b9d9f.appspot.com/o/Imagenes%2Fgorro-violeta.jpg?alt=media&token=322cefc8-4e6c-485e-9d38-0b13db30e751"

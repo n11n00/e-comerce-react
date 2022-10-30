@@ -1,5 +1,6 @@
+import {Link} from 'react-router-dom'
 import React, {useContext, useEffect, useState} from 'react';
-import { CarritoContext } from '../../context/carritoContext.jsx';
+import { CarritoContext } from '../../context/CarritoContext.jsx';
 import { mostrarCarrito } from '../../utilities/funcionesUtiles';
 
 const Carrito = () => {
@@ -8,21 +9,28 @@ const Carrito = () => {
 
     useEffect(() => {
         const prodMostrar  = carrito.map(producto => 
-            <div className="card cardProducto" key={producto.id}>
-                    <img src={producto.img} className="card-img-top" alt={producto.nombre} />
-                        <div className="card-body">
-                            <h5 className="card-title">{producto.nombre}</h5>
-                            <p className="card-text">Precio: {producto.precio}</p>
-                            <p className="card-text">Cantidad: {producto.cantidad}</p>
-                            <p className="card-text">Precio Total: {producto.precio * producto.cantidad}</p>
-                            <button className='btn btn-dark' onClick={() => quitarProducto(producto)}>Eliminar</button>
-                    </div>
+            
+                <div className="card cardProducto" key={producto.id}>
+                        <img src={producto.img} className="card-img-top" alt={producto.nombre} />
+                            <div className="card-body">
+                                <h5 className="card-title">{producto.nombre}</h5>
+                                <p className="card-text">Precio: {producto.precio}</p>
+                                <p className="card-text">Cantidad: {producto.cantidad}</p>
+                                <p className="card-text">Precio Total: {producto.precio * producto.cantidad}</p>
+                                <button className='btn btn-dark' onClick={() => quitarProducto(producto)}>Eliminar</button>
+                            </div>
                 </div>)
+        
+                
         setCarritoLocal(prodMostrar)
+        
     }, [carrito]);
     
-   const app = (carrito.length != 0) ? <div className='row'> {carritoLocal} </div> : <> <h1>No existen elementos en el carrito <button className='btn btn-dark'>Ir al Home</button></h1></>
-          
+    const app = (carrito.length != 0) ? <div className='row'> {carritoLocal} </div> : <> <h1>No existen elementos en tu carrito</h1>
+    <div className='btn-home'><Link className="nav-link active" to="/"><button className='btn btn-dark'>Ir al Home</button></Link>
+    </div>
+    </>
+    
     return app
 }
 

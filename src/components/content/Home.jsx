@@ -15,7 +15,7 @@ const Home = () => {
                             <h5 className="card-title">{producto[1].nombre}</h5>
                             <p className="card-text"> Marca: {producto[1].marca}</p>
                             <p className="card-text">Talle: {producto[1].talle}</p>
-                            <p className="card-text">Precio: {producto[1].precio}</p>
+                            <p className="card-text">Precio: ${producto[1].precio}</p>
                             <p className="card-text">Stock: {producto[1].stock}</p>
                             <button className='btn btn-success'><Link className='nav-link' to={`/producto/${producto[0]}`}>Ver Producto</Link></button>
                     </div>

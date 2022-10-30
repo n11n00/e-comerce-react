@@ -13,12 +13,12 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db =getFirestore()
+const db = getFirestore()
 
  const cargarBaseDeDatos = async () => {
-    const promise = await fetch('./json/productos.json')
+    const promise = await fetch('../json/productos.json')
     const productos = await promise.json()
-    productos.forEach( async(productos) =>{
+    productos.forEach( async(productos) => {
         await addDoc(collection(db,"productos"), {
             categoria: productos.idCategoria,
             nombre: productos.nombre,

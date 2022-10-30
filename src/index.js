@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { CarritoProvider } from './context/CarritoContext';
 import './styles/index.css';
 import App from './components/App.jsx';
-import './utilities/x'
+// import './utilities/x'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  
-    <App />
-  
+    <CarritoProvider>
+        <App />
+  </CarritoProvider>
+   
 );
 

@@ -10,6 +10,7 @@ import Producto from './content/Producto';
 import Footer from './content/Footer';
 import Categoria from './content/Categoria';
 import Carrito from './content/Carrito';
+
 const App = () => {
   return (
     <>

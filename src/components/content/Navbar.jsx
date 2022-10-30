@@ -8,9 +8,9 @@ const Navbar = ({contador}) => {
     const listDropdown = ["Joggers", "Hoodies", "Remeras", "Gorras"]
     return (
         <>
-           <nav className="navbar navbar-expand-lg navbar-dark bg-success">
+           <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
                 <div className="container-fluid">
-                <Link className="nav-link active" to="/"><button type="button" class="btn btn-success">NINO APK</button></Link>
+                <Link className="nav-link active" to="/"><button type="button" className="btn btn-primary">NINO APK</button></Link>
                     <div className="collapse navbar-collapse" id="navbarColor01">
                         <ul className="navbar-nav me-auto">
                             <Secciones/>
