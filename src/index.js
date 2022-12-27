@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { CarritoProvider } from './context/CarritoContext';
+import { CarritoProvider } from './context/carritoContext';
 import './styles/index.css';
 import App from './components/App.jsx';
 // import './utilities/x'

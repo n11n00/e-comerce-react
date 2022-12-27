@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react';
-import { CarritoContext } from '../../context/CarritoContext.jsx';
+import { CarritoContext } from '../../context/carritoContext.jsx';
 
 const DetalleProducto = ({producto}) => {
   const [cantidad, setCantidad] = useState(1);
