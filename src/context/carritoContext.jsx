@@ -33,11 +33,13 @@ const CarritoProvider = (props) => {
 
     }
 
-   
+   const limpiarCarrito = (carrito) => {
+    carrito.length = [];
+   }
 
     return (
         <>
-            <CarritoContext.Provider value={{carrito, agregarProducto, quitarProducto}}>
+            <CarritoContext.Provider value={{carrito, agregarProducto, quitarProducto, limpiarCarrito }}>
                     {props.children}
             </CarritoContext.Provider>
         </>

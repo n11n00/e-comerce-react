@@ -2,9 +2,10 @@ import {Link} from 'react-router-dom'
 import React, {useContext, useEffect, useState} from 'react';
 import { CarritoContext } from '../../context/CarritoContext.jsx';
 import { mostrarCarrito } from '../../utilities/funcionesUtiles';
+import OrdenDeCompra from './OrdenDeCompra.jsx';
 
 const Carrito = () => {
-    const {carrito, agregarProducto, quitarProducto} = useContext(CarritoContext)
+    const {carrito, agregarProducto, quitarProducto, limpiarCarrito } = useContext(CarritoContext)
     const [carritoLocal, setCarritoLocal] = useState([]);
 
     useEffect(() => {
@@ -17,7 +18,7 @@ const Carrito = () => {
                                 <p className="card-text">Precio: {producto.precio}</p>
                                 <p className="card-text">Cantidad: {producto.cantidad}</p>
                                 <p className="card-text">Precio Total: {producto.precio * producto.cantidad}</p>
-                                <button className='btn btn-dark' onClick={() => quitarProducto(producto)}>Eliminar</button>
+                                <button className='btn btn-danger ' onClick={() => quitarProducto(producto)}>Eliminar</button>
                             </div>
                 </div>)
         
@@ -25,8 +26,20 @@ const Carrito = () => {
         setCarritoLocal(prodMostrar)
         
     }, [carrito]);
+
     
-    const app = (carrito.length != 0) ? <div className='row'> {carritoLocal} </div> : <> <h1>No existen elementos en tu carrito</h1>
+    
+    const app = (carrito.length != 0) ? <div className='row'> {carritoLocal} 
+    <div className='btn-home'>
+        <button className='btn btn-danger ' onClick={() => limpiarCarrito (carrito)}>Limpiar Carrito</button>
+    </div>
+    <div className='btn-home'>
+        <Link className='nav-link' to= "/OrdenDeCompra"><button className='btn btn-success'>Continuar con la compra</button></Link>
+    </div>
+
+   
+
+    </div> : <> <h1>No existen elementos en tu carrito</h1>
     <div className='btn-home'><Link className="nav-link active" to="/"><button className='btn btn-dark'>Ir al Home</button></Link>
     </div>
     </>
