@@ -5,10 +5,10 @@ const CarritoContext = createContext()
 const CarritoProvider = (props) => {
 
     const [carrito, setCarrito] = useState([]);
-
+    
     const agregarProducto = (prod, cant) => {
         const aux = carrito
-        let indice = aux.findIndex(producto => producto.id  == prod.id) //Si existe o no
+        let indice = aux.findIndex(producto => producto.id  == prod[0])
 
         if(indice != -1) {
             aux[indice].cantidad = cant
@@ -33,17 +33,21 @@ const CarritoProvider = (props) => {
 
     }
 
-   const limpiarCarrito = (carrito) => {
-    carrito.length = [];
+   const limpiarCarrito = () => {
+    setCarrito([]);
+   }
+
+   const sumTotal = () => {
+    return carrito.reduce((total, producto) => total += producto.cantidad * producto.precio, 0);
    }
 
     return (
         <>
-            <CarritoContext.Provider value={{carrito, agregarProducto, quitarProducto, limpiarCarrito }}>
+            <CarritoContext.Provider value={{carrito, agregarProducto, quitarProducto, limpiarCarrito,sumTotal }}>
                     {props.children}
             </CarritoContext.Provider>
         </>
     );
 }
 
-export {CarritoContext, CarritoProvider};
+export  {CarritoContext, CarritoProvider};

@@ -1,42 +1,48 @@
-import React from 'react';
+import React, { useContext , useEffect , useState} from 'react';
 import {Link} from 'react-router-dom'
 import Swal from 'sweetalert2';
 import { getProducto } from '../../utilities/firebase'
 import { createOrdenCompra } from '../../utilities/firebase';
 import {getOrdenCompra} from '../../utilities/firebase'
+import { CarritoContext } from '../../context/carritoContext';
+import { getDoc, addDoc, collection, getFirestore, doc } from 'firebase/firestore';
 
 
-const OrdenDeCompra = () => {
-    const datosFormulario = React.useRef()
-
-    const datosCompradorForm = (e) => {
-        e.preventDefault()
+    const OrdenDeCompra = () => {
+        const[nombre, setNombre] = useState("");
+        const[apellido, setApellido] = useState("");
+        const[email, setEmail] = useState("");
+        const[dni, setDni] = useState("");
+        const[direccion, setDireccion] = useState("");
+        // const[orderId,setOrderId] = useState("");
         
-        console.log(datosFormulario)
-        const datForm = new FormData(datosFormulario.current)
-        console.log(Object.fromEntries(datForm))
-        e.target.reset()
+        const datosFormulario = React.useRef()
+
+       
+
+
+        const datosCompradorForm = (e) => {
+            e.preventDefault()
+        
+
+        
+            e.target.reset()
     }
 
-
-    createOrdenCompra(120000, "nombre", "Apellido", "Email", 123123, "Calle Falsa 123").then(orden => {
-        console.log(orden.id)
-    })
-    
-    getOrdenCompra("UTKHpA46Uvs43P3Jh5IX").then(orden => {
-        console.log(orden.id)
-    })
-
-
+        
+    //    getOrdenCompra("UTKHpA46Uvs43P3Jh5IX").then(orden => {
+    //     console.log(orden.id)
+    // })
 
 
     const mostrarAlertaFinalizarCompra = () => {
         Swal.fire(
             'Gracias por su compra!',
-            'En 48hs le estaremos enviando la factura de compra!',
+            
+            //  `Su numero de orden es: ${}`,
             'success'
           )
-    }
+    } 
 
     return (
         <>
@@ -44,25 +50,25 @@ const OrdenDeCompra = () => {
             <form onSubmit={datosCompradorForm} ref={datosFormulario}>
                 <div className="mb-3">
                     <label htmlFor="nombre" className="form-label">Nombre</label>
-                    <input type="nombre" className="form-control" name="nombre" />
+                    <input type="nombre" className="form-control" name="nombre" onInput={(e) => {setNombre(e.target.value)}}/>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="Apellido" className="form-label">Apellido</label>
-                    <input type="Apellido" className="form-control" name="Apellido"  />
+                    <input type="Apellido" className="form-control" name="Apellido" onInput={(e) => {setApellido(e.target.value)}} />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="Email" className="form-label">Email</label>
-                    <input type="Email" className="form-control" name="Email"  />
+                    <input type="Email" className="form-control" name="Email" onInput={(e) => {setEmail(e.target.value)}} />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="Dni" className="form-label">Dni</label>
-                    <input type="Dni" className="form-control" name="Dni"  />
+                    <input type="Dni" className="form-control" name="Dni" onInput={(e) => {setDni(e.target.value)}} />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="Direccion" className="form-label">Direccion</label>
-                    <input type="Direccion" className="form-control" name="Direccion"  />
+                    <input type="Direccion" className="form-control" name="Direccion" onInput={(e) => {setDireccion(e.target.value)}} />
                 </div>
-                    <button type="submit" className="btn btn-primary nose" onClick={mostrarAlertaFinalizarCompra}><Link className='nav-link' to={`/`}>Finalizar Compra</Link></button>
+                    <button type="submit" className="btn btn-primary nose" onClick={()=>createOrdenCompra(120000, nombre, apellido, email, dni, direccion).then & mostrarAlertaFinalizarCompra()}><Link className='nav-link' to={`/`}>Finalizar Compra</Link></button>
             </form>                                               
         </div>
         
@@ -72,3 +78,7 @@ const OrdenDeCompra = () => {
 };
 
 export default OrdenDeCompra;
+
+
+
+

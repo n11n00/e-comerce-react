@@ -81,10 +81,10 @@ const db = getFirestore()
   }
   
   const getOrdenCompra = async (id) => {
-    const ordenCompra = await getDoc(doc(db, "ordenCompra", id))
+    const ordenCompra = await getDoc(doc(db, "ordenCompra",id))
     return ordenCompra
   }
-
+ 
 
 
   export {cargarBaseDeDatos, getProductos, getProducto, updateProducto, deleteProducto, createProducto, createOrdenCompra, getOrdenCompra}
